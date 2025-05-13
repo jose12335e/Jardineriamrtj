@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+h1, h2 {
+  color: #2e7d32;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.semana-box {
+  background-color: #f9f9f9;
+  border-left: 4px solid #4caf50;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.acciones button {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#generarReporteBtn {
+  background-color: #1976d2;
+  color: white;
+}
+#generarReporteBtn:hover {
+  background-color: #0d47a1;
+}
+
+#descargarTxtBtn {
+  background-color: #2e7d32;
+  color: white;
+}
+#descargarTxtBtn:hover {
+  background-color: #1b5e20;
+}
+
+#imprimirBtn {
+  background-color: #ed6c02;
+  color: white;
+}
+#imprimirBtn:hover {
+  background-color: #e65100;
+}
+
+#compartirBtn {
+  background-color: #8e24aa;
+  color: white;
+}
+#compartirBtn:hover {
+  background-color: #62194b;
+}
+
+.reporte-area {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.registro-mensual-container {
+  margin-top: 20px;
+}
+
+/* Estilo profesional para cada registro */
+.registro-mensual {
+  background-color: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #388e3c;
+  border-radius: 6px;
+}
+
+.registro-mensual strong {
+  color: #1976d2;
+}
+
+.registro-mensual em {
+  display: block;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Diseño para imprimir */
+@media print {
+  body {
+    font-size: 12pt;
+    background-color: white;
+    color: black;
+  }
+
+  .reporte-area,
+  .registro-mensual {
+    background: white !important;
+    border: 1px solid #aaa !important;
+  }
+
+  .semana-box {
+    background: white !important;
+    border-left-color: #4caf50 !important;
+  }
+
+  li::before {
+    content: "[✓]";
+    color: green;
+    margin-right: 5px;
+  }
+
+  li:not(.tarea-completada)::before {
+    content: "[ ]";
+    color: red;
+  }
+}

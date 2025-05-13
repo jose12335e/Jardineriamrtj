@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jardinería – Salón del Reino</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Plan de Jardinería – Salón del Reino</h1>
+    </header>
+
+    <!-- Formulario -->
+    <section id="formulario">
+      <label>Responsable:
+        <input type="text" id="responsable" required />
+      </label>
+
+      <!-- Semana 1 -->
+      <div class="semana-box">
+        <h2>Semana 1 – Revisión General y Poda Ligera</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana1"> Inspección visual del estado general</label></li>
+          <li><label><input type="checkbox" class="semana1"> Poda ligera de arbustos, setos y plantas ornamentales</label></li>
+          <li><label><input type="checkbox" class="semana1"> Retiro de hojas secas, flores marchitas y ramas caídas</label></li>
+          <li><label><input type="checkbox" class="semana1"> Limpieza de senderos y bordes</label></li>
+        </ul>
+        <label>Fecha de realización (Semana 1):
+          <input type="date" id="fechaSemana1" />
+        </label>
+        <label>Comentarios Semana 1:
+          <textarea id="comentarioSemana1" placeholder="Observaciones..."></textarea>
+        </label>
+      </div>
+
+      <!-- Semana 2 -->
+      <div class="semana-box">
+        <h2>Semana 2 – Fertilización y Control de Plagas</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana2"> Aplicación de fertilizante orgánico o de liberación lenta</label></li>
+          <li><label><input type="checkbox" class="semana2"> Revisión de plagas y enfermedades</label></li>
+          <li><label><input type="checkbox" class="semana2"> Aplicación de tratamientos preventivos o correctivos</label></li>
+          <li><label><input type="checkbox" class="semana2"> Riego profundo (si aplica)</label></li>
+        </ul>
+        <label>Fecha de realización (Semana 2):
+          <input type="date" id="fechaSemana2" />
+        </label>
+        <label>Comentarios Semana 2:
+          <textarea id="comentarioSemana2" placeholder="Observaciones..."></textarea>
+        </label>
+      </div>
+
+      <!-- Semana 3 -->
+      <div class="semana-box">
+        <h2>Semana 3 – Corte de Césped y Riego Profundo</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana3"> Corte del césped</label></li>
+          <li><label><input type="checkbox" class="semana3"> Aireación del suelo</label></li>
+          <li><label><input type="checkbox" class="semana3"> Revisión y limpieza del sistema de riego</label></li>
+          <li><label><input type="checkbox" class="semana3"> Riego profundo de árboles y arbustos</label></li>
+        </ul>
+        <label>Fecha de realización (Semana 3):
+          <input type="date" id="fechaSemana3" />
+        </label>
+        <label>Comentarios Semana 3:
+          <textarea id="comentarioSemana3" placeholder="Observaciones..."></textarea>
+        </label>
+      </div>
+
+      <!-- Semana 4 -->
+      <div class="semana-box">
+        <h2>Semana 4 – Embellecimiento y Detalles</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana4"> Plantación de flores de temporada</label></li>
+          <li><label><input type="checkbox" class="semana4"> Reposición de plantas dañadas o secas</label></li>
+          <li><label><input type="checkbox" class="semana4"> Limpieza a fondo de maceteros y jardineras</label></li>
+          <li><label><input type="checkbox" class="semana4"> Acomodo estético de piedras o decoraciones</label></li>
+        </ul>
+        <label>Fecha de realización (Semana 4):
+          <input type="date" id="fechaSemana4" />
+        </label>
+        <label>Comentarios Semana 4:
+          <textarea id="comentarioSemana4" placeholder="Observaciones..."></textarea>
+        </label>
+      </div>
+
+      <button id="guardarBtn">Guardar</button>
+    </section>
+
+    <!-- Historial y Reporte -->
+    <section id="historial">
+      <h2>Historial Mensual</h2>
+      <select id="mesSelector"></select>
+
+      <!-- Contenedor de resumen -->
+      <div id="resumen" class="registro-mensual-container"></div>
+
+      <!-- Acciones -->
+      <div class="acciones">
+        <button id="generarReporteBtn">Generar Reporte</button>
+        <button id="descargarTxtBtn">Descargar como .txt</button>
+        <button id="imprimirBtn">Imprimir / Guardar como PDF</button>
+        <button id="compartirBtn" disabled>Compartir (solo móvil)</button>
+      </div>
+
+      <!-- Área donde se muestra el reporte generado -->
+      <div id="reporteArea" class="reporte-area"></div>
+    </section>
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
