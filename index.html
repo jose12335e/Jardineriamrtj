@@ -5,18 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jardinería – Salón del Reino</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
 </head>
 <body>
 
+  <!-- Notificación tipo Snackbar -->
+  <div id="notificacion" class="notificacion"></div>
+
   <div class="container">
     <header>
-      <h1>Plan de Jardinería – Cong.Miraflores</h1>
+      <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong.Miraflores</h1>
     </header>
+
+    <!-- Botón modo oscuro -->
+    <button id="toggleDarkMode">🌙 Modo Oscuro</button>
+
+    <!-- Loader historial -->
+    <div id="loader" class="loader">Cargando historial...</div>
 
     <!-- Formulario -->
     <section id="formulario">
       <label>Responsable:
-        <input type="text" id="responsable" required />
+        <input type="text" id="responsable" required placeholder="Nombre del responsable" />
       </label>
 
       <!-- Semana 1 -->
@@ -100,14 +111,13 @@
 
       <!-- Acciones -->
       <div class="acciones">
-        <button id="generarReporteBtn">Generar Reporte</button>
-        <button id="descargarTxtBtn">Descargar como .txt</button>
-        <button id="imprimirBtn">Imprimir / Guardar como PDF</button>
-        <button id="compartirBtn" disabled>Compartir (solo móvil)</button>
-      </div>
+        <button id="generarReporteBtn"><i class="fas fa-file-alt"></i> Generar Reporte</button>
+        <button id="verPlantillaBtn"><i class="fas fa-file-alt"></i> Ver en plantilla</button>
+        </div>
 
       <!-- Área donde se muestra el reporte generado -->
       <div id="reporteArea" class="reporte-area"></div>
+      
     </section>
   </div>
 

@@ -1,0 +1,72 @@
+/* === RESPONSIVE DESIGN === */
+
+/* Evita scroll horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Asegura que las imágenes no rompan el layout */
+img,
+video,
+canvas,
+iframe,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tamaño adecuado de contenedor en móvil */
+.container {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Títulos más pequeños en móvil */
+h1 {
+  font-size: 1.3rem;
+}
+h2 {
+  font-size: 1.1rem;
+}
+
+/* Botones responsivos */
+.acciones {
+  flex-direction: column;
+  gap: 8px;
+}
+.acciones button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Inputs y textarea adaptables */
+input[type="text"],
+input[type="date"],
+textarea {
+  font-size: 1rem;
+  padding: 8px;
+}
+
+/* Lista de tareas legible */
+.semana-box ul li label {
+  font-size: 0.95rem;
+}
+
+/* Botón modo oscuro adaptado */
+#toggleDarkMode {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+/* Tablas e imágenes dentro del reporte */
+.reporte-area img,
+.reporte-area table {
+  max-width: 100%;
+  height: auto;
+}

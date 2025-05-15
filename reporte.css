@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.acciones button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#descargarTxtBtn {
+  background-color: #2e7d32;
+  color: white;
+}
+
+#imprimirBtn {
+  background-color: #ed6c02;
+  color: white;
+}
+
+#compartirBtn {
+  background-color: #8e24aa;
+  color: white;
+}
+
+.acciones button:hover {
+  filter: brightness(0.9);
+}
+
+.reporte-area {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+em {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    background-color: white;
+    color: black;
+  }
+
+  .acciones {
+    display: none;
+  }
+}

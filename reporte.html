@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporte Mensual</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="reporte.css" /> <!-- Estilos específicos del reporte -->
+</head>
+<body>
+
+  <div class="container">
+    <h1>Reporte Mensual</h1>
+
+    <!-- Acciones -->
+    <div class="acciones">
+      <button id="descargarTxtBtn"><i class="fas fa-download"></i> Descargar como .txt</button>
+      <button id="imprimirBtn"><i class="fas fa-print"></i> Imprimir / Guardar como PDF</button>
+      <button id="compartirBtn" disabled><i class="fas fa-share-alt"></i> Compartir (solo móvil)</button>
+    </div>
+
+    <!-- Área del reporte -->
+    <div id="reporteArea" class="reporte-area">
+      <p>Cargando reporte...</p>
+    </div>
+  </div>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js "></script>
+
+  <!-- Lógica de reporte -->
+  <script type="module" src="./reporte.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión - Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body class="login-body">
+
+  <div class="login-container">
+    <h2>Jardinería Cong. Miraflores</h2>
+    <form id="loginForm">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required />
+
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required />
+
+      <button type="submit">Ingresar</button>
+    </form>
+    <p id="mensajeError"></p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
