@@ -352,3 +352,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Verificar si el usuario ha iniciado sesión
+if (!sessionStorage.getItem("isLoggedIn")) {
+  alert("Por favor, inicia sesión primero.");
+  window.location.href = "login.html";
+}
