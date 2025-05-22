@@ -26,26 +26,39 @@
 
     <!-- Formulario -->
     <section id="formulario">
-      <label>Responsable:
-        <input type="text" id="responsable" required placeholder="Nombre del responsable" />
-      </label>
+  <label>Responsable:</label>
+  <select id="responsable" required>
+    <option value="">Selecciona tu nombre</option>
+    <option value="Misael Ramires">Misael Ramires</option>
+    <option value="Andy Guzman">Andy Guzman</option>
+    <option value="Jose M. Aracena">Jose M. Aracena</option>
+  </select>
+
 
       <!-- Semana 3 -->
-      <div class="semana-box">
-        <h2>Semana 3 – Corte de Césped y Riego Profundo</h2>
-        <ul>
-          <li><label><input type="checkbox" class="semana3"> Corte del césped</label></li>
-          <li><label><input type="checkbox" class="semana3"> Aireación del suelo</label></li>
-          <li><label><input type="checkbox" class="semana3"> Revisión y limpieza del sistema de riego</label></li>
-          <li><label><input type="checkbox" class="semana3"> Riego profundo de árboles y arbustos</label></li>
-        </ul>
-        <label>Fecha de realización (Semana 3):
-          <input type="date" id="fechaSemana3" />
-        </label>
-        <label>Comentarios Semana 3:
-          <textarea id="comentarioSemana3" placeholder="Observaciones..."></textarea>
-        </label>
-      </div>
+      <div class="semana-box" id="semana3">
+  <h2>Semana 3 – Mantenimiento de Bordeadora y Equipos de Corte</h2>
+  <ul>
+    <li><label><input type="checkbox" class="semana3"> Limpiar el cabezal y protector de la bordeadora</label></li>
+    <li><label><input type="checkbox" class="semana3"> Verificar y reemplazar el hilo de corte (lazo plástico)</label></li>
+    <li><label><input type="checkbox" class="semana3"> Limpiar el carrete y revisar que el hilo no esté trabado</label></li>
+    <li><label><input type="checkbox" class="semana3"> Revisar y ajustar tapa del carrete y protector</label></li>
+    <li><label><input type="checkbox" class="semana3"> Engrasar eje de transmisión (solo en modelos a gasolina)</label></li>
+    <li><label><input type="checkbox" class="semana3"> Limpiar las rejillas de ventilación (si es a batería)</label></li>
+    <li><label><input type="checkbox" class="semana3"> Cargar batería en lugar fresco y seco (modelos a pila)</label></li>
+    <li><label><input type="checkbox" class="semana3"> Verificar filtro de aire y nivel de aceite (modelos a gasolina)</label></li>
+    <li><label><input type="checkbox" class="semana3"> Almacenar la herramienta colgada o en lugar seco</label></li>
+  </ul>
+
+  <label>Fecha de realización (Semana 3):
+    <input type="date" id="fechaSemana3" />
+  </label>
+
+  <label>Comentarios Semana 3:
+    <textarea id="comentarioSemana3" placeholder="Observaciones del mantenimiento..."></textarea>
+  </label>
+</div>
+
     </section>
 
     <!-- Historial y Reporte -->

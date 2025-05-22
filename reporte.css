@@ -1,75 +1,130 @@
 body {
-  font-family: Arial, sans-serif;
-  background: white;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fefc;
   color: #333;
-  padding: 20px;
+  padding: 30px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
   text-align: center;
   color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 25px;
 }
 
 .acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 25px;
   justify-content: center;
 }
 
 .acciones button {
-  padding: 10px 16px;
+  padding: 12px 20px;
   font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.acciones button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  filter: brightness(0.95);
 }
 
 #descargarTxtBtn {
   background-color: #2e7d32;
   color: white;
 }
-
 #imprimirBtn {
   background-color: #ed6c02;
   color: white;
 }
-
 #compartirBtn {
   background-color: #8e24aa;
   color: white;
 }
 
-.acciones button:hover {
-  filter: brightness(0.9);
-}
-
 .reporte-area {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   white-space: pre-wrap;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.7;
+  animation: fadeIn 0.4s ease;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+/* Nueva mejora: títulos y secciones */
+.reporte-area h2 {
+  color: #2e7d32;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  border-left: 5px solid #4caf50;
+  padding-left: 10px;
 }
 
-li {
-  margin-bottom: 6px;
+.reporte-area h3 {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #1b5e20;
+  border-left: 4px solid #81c784;
+  padding-left: 10px;
 }
 
-em {
+/* Lista de tareas del reporte */
+.reporte-area ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.reporte-area li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background: #f8fdf8;
+  padding: 10px 14px;
+  border-left: 5px solid #4caf50;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.reporte-area li::before {
+  content: "✅";
+  font-size: 1.1rem;
+  color: #2e7d32;
+}
+
+.reporte-area li.incompleto::before {
+  content: "❌";
+  color: #d32f2f;
+}
+
+.reporte-area p strong {
+  color: #2e7d32;
+}
+
+.reporte-area em {
   display: block;
-  margin-top: 8px;
-  color: #666;
+  margin-top: 12px;
+  color: #555;
+  font-style: italic;
 }
 
+/* Modo impresión */
 @media print {
   body {
     font-size: 12pt;
@@ -78,6 +133,24 @@ em {
   }
 
   .acciones {
-    display: none;
+    display: none !important;
+  }
+
+  .reporte-area {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+/* Animación entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

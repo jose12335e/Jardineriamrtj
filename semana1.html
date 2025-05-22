@@ -11,58 +11,56 @@
 <body>
 
   <!-- Notificación tipo Snackbar -->
-  <div id="notificacion" class="notificacion"></div>
+  <div id="notificacion" class="notificacion" aria-live="polite"></div>
 
   <div class="container">
     <header>
       <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong. Miraflores</h1>
+      <button id="toggleDarkMode" class="modo-oscuro-btn" aria-label="Cambiar modo oscuro">🌙 Modo Oscuro</button>
     </header>
-
-    <!-- Botón modo oscuro -->
-    <button id="toggleDarkMode">🌙 Modo Oscuro</button>
 
     <!-- Loader historial -->
     <div id="loader" class="loader">Cargando historial...</div>
 
-    <!-- Formulario -->
-    <section id="formulario">
-      <label>Responsable:
-        <input type="text" id="responsable" required placeholder="Nombre del responsable" />
-      </label>
+   <!-- Formulario -->
+<section id="formulario">
+  <label>Responsable:</label>
+  <select id="responsable" required>
+    <option value="">Selecciona tu nombre</option>
+    <option value="Misael Ramires">Misael Ramires</option>
+    <option value="Andy Guzman">Andy Guzman</option>
+    <option value="Jose M. Aracena">Jose M. Aracena</option>
+  </select>
 
-      <!-- Semana 1 -->
-      <div class="semana-box">
-        <h2>Semana 1 – Revisión General y Poda Ligera</h2>
-        <ul>
-          <li><label><input type="checkbox" class="semana1"> Inspección visual del estado general</label></li>
-          <li><label><input type="checkbox" class="semana1"> Poda ligera de arbustos, setos y plantas ornamentales</label></li>
-          <li><label><input type="checkbox" class="semana1"> Retiro de hojas secas, flores marchitas y ramas caídas</label></li>
-          <li><label><input type="checkbox" class="semana1"> Limpieza de senderos y bordes</label></li>
-        </ul>
-        <label>Fecha de realización (Semana 1):
-          <input type="date" id="fechaSemana1" />
-        </label>
-        <label>Comentarios Semana 1:
-          <textarea id="comentarioSemana1" placeholder="Observaciones..."></textarea>
-        </label>
-      </div>
-    </section>
+  <!-- Semana 1 -->
+  <div class="semana-box" id="semana1">
+    <h2><i class="fas fa-leaf"></i> Semana 1 – Revisión General y Poda Ligera</h2>
+    <ul>
+      <li><label><input type="checkbox" class="semana1"> Inspección visual del estado general</label></li>
+      <li><label><input type="checkbox" class="semana1"> Poda ligera de arbustos, setos y plantas ornamentales</label></li>
+      <li><label><input type="checkbox" class="semana1"> Retiro de hojas secas, flores marchitas y ramas caídas</label></li>
+      <li><label><input type="checkbox" class="semana1"> Limpieza de senderos y bordes</label></li>
+    </ul>
+    <label for="fechaSemana1">Fecha de realización (Semana 1):</label>
+    <input type="date" id="fechaSemana1" />
+
+    <label for="comentarioSemana1">Comentarios Semana 1:</label>
+    <textarea id="comentarioSemana1" placeholder="Observaciones..."></textarea>
+  </div>
+</section>
 
     <!-- Historial y Reporte -->
     <section id="historial">
-      <h2>Historial Mensual</h2>
-      <select id="mesSelector"></select>
+      <h2><i class="fas fa-history"></i> Historial Mensual</h2>
+      <select id="mesSelector" aria-label="Seleccionar mes"></select>
 
-      <!-- Contenedor de resumen -->
       <div id="resumen" class="registro-mensual-container"></div>
 
-      <!-- Acciones -->
       <div class="acciones">
         <button id="generarReporteBtn"><i class="fas fa-file-alt"></i> Generar Reporte</button>
-        <button id="verPlantillaBtn"><i class="fas fa-file-alt"></i> Ver en plantilla</button>
+        <button id="verPlantillaBtn"><i class="fas fa-eye"></i> Ver en plantilla</button>
       </div>
 
-      <!-- Área donde se muestra el reporte generado -->
       <div id="reporteArea" class="reporte-area"></div>
     </section>
   </div>
@@ -71,6 +69,6 @@
   <script type="module" src="app.js"></script>
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
-  
+
 </body>
 </html>
