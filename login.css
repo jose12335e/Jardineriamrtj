@@ -1,36 +1,84 @@
-.login-body {
-  margin: 0;
+/* Animación al cargar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de ícono */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Estilos generales */
+body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-image: url('img.png'); /* Fondo de jardín */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
 }
 
+/* Contenedor del login con efecto vidrio */
 .login-container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
   max-width: 400px;
+  text-align: center;
 }
 
+/* Título */
 .login-container h2 {
-  text-align: center;
   color: #2e7d32;
   margin-bottom: 20px;
+  font-size: 1.6rem;
 }
 
+.login-container h2 i {
+  margin-right: 8px;
+  animation: pulse 2s infinite;
+}
+
+/* Formulario */
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 label {
   margin-bottom: 5px;
   font-weight: bold;
+  color: #2e7d32;
+  text-align: left;
+  width: 100%;
+  max-width: 300px;
 }
 
 input[type="text"],
@@ -38,25 +86,55 @@ input[type="password"] {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
 }
 
+/* Botón con animación */
 button {
-  padding: 10px;
+  padding: 12px;
   background-color: #2e7d32;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #1b5e20;
+  transform: scale(1.03);
 }
 
-#mensajeError {
+button:active {
+  transform: scale(0.97);
+}
+
+/* Mensaje de error */
+.error-message {
   color: red;
-  text-align: center;
   margin-top: 10px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .login-container {
+    margin: 20px;
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+    max-width: 100%;
+  }
 }

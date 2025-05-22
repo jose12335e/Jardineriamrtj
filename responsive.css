@@ -58,10 +58,10 @@ textarea {
 
 /* Botón modo oscuro adaptado */
 #toggleDarkMode {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 0.95rem;
+    width: 39%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 0.95rem;
 }
 
 /* Tablas e imágenes dentro del reporte */

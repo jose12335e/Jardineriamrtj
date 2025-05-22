@@ -271,3 +271,42 @@ label input[type="checkbox"] {
     color: inherit !important;
   }
 }
+body {
+  font-family: Arial, sans-serif;
+  background: #f2fdf4;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #d8f3dc;
+  border-bottom: 3px solid #81c784;
+}
+
+h1 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+}
+
+.botones-semanas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-semana {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-semana:hover {
+  background-color: #388e3c;
+}

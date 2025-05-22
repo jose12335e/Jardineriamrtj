@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jardinería – Salón del Reino</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Notificación tipo Snackbar -->
+  <div id="notificacion" class="notificacion"></div>
+
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong. Miraflores</h1>
+    </header>
+
+    <!-- Botón modo oscuro -->
+    <button id="toggleDarkMode">🌙 Modo Oscuro</button>
+
+    <!-- Loader historial -->
+    <div id="loader" class="loader">Cargando historial...</div>
+
+    <!-- Formulario -->
+    <section id="formulario">
+      <label>Responsable:
+        <input type="text" id="responsable" required placeholder="Nombre del responsable" />
+      </label>
+
+      <!-- Semana 4 -->
+      <div class="semana-box">
+        <h2>Semana 4 – Embellecimiento y Detalles</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana4"> Plantación de flores de temporada</label></li>
+          <li><label><input type="checkbox" class="semana4"> Reposición de plantas dañadas o secas</label></li>
+          <li><label><input type="checkbox" class="semana4"> Limpieza a fondo de maceteros y jardineras</label></li>
+          <li><label><input type="checkbox" class="semana4"> Acomodo estético de piedras o decoraciones</label></li>
+        </ul>
+        <label>Fecha de realización (Semana 4):
+          <input type="date" id="fechaSemana4" />
+        </label>
+        <label>Comentarios Semana 4:
+          <textarea id="comentarioSemana4" placeholder="Observaciones..."></textarea>
+        </label>
+      </div>
+    </section>
+
+    <!-- Historial y Reporte -->
+    <section id="historial">
+      <h2>Historial Mensual</h2>
+      <select id="mesSelector"></select>
+
+      <!-- Contenedor de resumen -->
+      <div id="resumen" class="registro-mensual-container"></div>
+
+      <!-- Acciones -->
+      <div class="acciones">
+        <button id="generarReporteBtn"><i class="fas fa-file-alt"></i> Generar Reporte</button>
+        <button id="verPlantillaBtn"><i class="fas fa-file-alt"></i> Ver en plantilla</button>
+      </div>
+
+      <!-- Área donde se muestra el reporte generado -->
+      <div id="reporteArea" class="reporte-area"></div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

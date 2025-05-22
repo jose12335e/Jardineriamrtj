@@ -234,7 +234,7 @@ export function generarContenidoMensual(datosArray) {
       contenido += `<p><strong>Fecha:</strong> ${data.fecha}</p>`;
       contenido += `<ul>`;
       data.tareas.forEach(t => {
-        contenido += `<li>${t.completada ? '[✔]' : '[ ]'} ${t.tarea}</li>`;
+        contenido += `<li>${t.completada ? '[✔]' : '[]'} ${t.tarea}</li>`;
       });
       contenido += `</ul>`;
       contenido += `<p><em>Comentarios: ${data.comentario}</em></p><hr>`;
