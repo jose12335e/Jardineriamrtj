@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jardinería – Salón del Reino</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <link rel="stylesheet" href="botones.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Notificación tipo Snackbar -->
+  <div id="notificacion" class="notificacion" aria-live="polite"></div>
+
+  <main class="container">
+    <header>
+      <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong. Miraflores</h1>
+      <button id="toggleDarkMode" class="modo-oscuro-btn" aria-label="Cambiar entre modo claro y oscuro">🌙 Modo Oscuro</button>
+    </header>
+
+    <!-- Cargando historial -->
+    <div id="loader" class="loader">Cargando historial...</div>
+
+    <!-- Historial y Reporte -->
+    <section id="historial" aria-labelledby="historialTitulo">
+      <h2 id="historialTitulo"><i class="fas fa-history"></i> Historial Mensual</h2>
+
+      <label for="mesSelector" class="visually-hidden">Selecciona un mes:</label>
+      <select id="mesSelector" aria-label="Seleccionar mes"></select>
+
+      <div id="resumen" class="registro-mensual-container"></div>
+
+      <div class="acciones">
+        <button id="generarReporteBtn">
+          <i class="fas fa-file-alt"></i> Generar Reporte
+        </button>
+        <button id="verPlantillaBtn">
+          <i class="fas fa-eye"></i> Ver en plantilla
+        </button>
+      </div>
+
+      <div id="reporteArea" class="reporte-area"></div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="reporteHistorial.js"></script>
+
+</body>
+</html>

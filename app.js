@@ -251,14 +251,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const guardarBtn = document.getElementById('guardarBtn');
   const mesSelector = document.getElementById('mesSelector');
 
-  // Botones dinámicos para guardar solo la semana que se llenó
-  for (let i = 1; i <= 4; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = `Guardar Semana ${i}`;
-    btn.style.marginTop = "20px";
-    btn.onclick = () => guardarSemana(i);
-    document.getElementById("formulario").appendChild(btn);
-  }
+  // Botón de guardado dinámico para la semana mostrada
+const semanaActiva = document.querySelector(".semana-box");
+if (semanaActiva) {
+  const id = semanaActiva.id;
+  const numeroSemana = id.replace("semana", "");
+
+  const btnGuardar = document.createElement("button");
+  btnGuardar.textContent = `Guardar Semana ${numeroSemana}`;
+  btnGuardar.className = "guardar-btn"; // Clase de estilo
+  btnGuardar.onclick = () => guardarSemana(numeroSemana);
+  document.getElementById("formulario")?.appendChild(btnGuardar);
+}
+
+
 
   // Cargar meses en selector
   const today = new Date();

@@ -10,72 +10,48 @@
 </head>
 <body>
 
-  <!-- Notificación tipo Snackbar -->
-  <div id="notificacion" class="notificacion"></div>
-
   <div class="container">
     <header>
       <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong. Miraflores</h1>
+      <button id="toggleDarkMode" class="modo-oscuro-btn" aria-label="Cambiar modo oscuro">🌙 Modo Oscuro</button>
     </header>
-
-    <!-- Botón modo oscuro -->
-    <button id="toggleDarkMode">🌙 Modo Oscuro</button>
 
     <!-- Loader historial -->
     <div id="loader" class="loader">Cargando historial...</div>
 
-    <!-- Formulario -->
-   <section id="formulario">
-  <label>Responsable:</label>
-  <select id="responsable" required>
-    <option value="">Selecciona tu nombre</option>
-    <option value="Misael Ramires">Misael Ramires</option>
-    <option value="Andy Guzman">Andy Guzman</option>
-    <option value="Jose M. Aracena">Jose M. Aracena</option>
-  </select>
+    <!-- Formulario Semana 2 -->
+    <section id="formulario">
+      <label for="responsable">Responsable:</label>
+      <select id="responsable" required>
+        <option value="">Selecciona tu nombre</option>
+        <option value="Misael Ramires">Misael Ramires</option>
+        <option value="Andy Guzman">Andy Guzman</option>
+        <option value="Jose M. Aracena">Jose M. Aracena</option>
+      </select>
 
-
-      <!-- Semana 2 -->
-      <div class="semana-box">
-        <h2>Semana 2 – Fertilización y Control de Plagas</h2>
+      <div class="semana-box" id="semana2">
+        <h2><i class="fas fa-bug"></i> Semana 2 – Fertilización y Control de Plagas</h2>
         <ul>
           <li><label><input type="checkbox" class="semana2"> Aplicación de fertilizante orgánico o de liberación lenta</label></li>
           <li><label><input type="checkbox" class="semana2"> Revisión de plagas y enfermedades</label></li>
           <li><label><input type="checkbox" class="semana2"> Aplicación de tratamientos preventivos o correctivos</label></li>
           <li><label><input type="checkbox" class="semana2"> Riego profundo (si aplica)</label></li>
         </ul>
-        <label>Fecha de realización (Semana 2):
-          <input type="date" id="fechaSemana2" />
-        </label>
-        <label>Comentarios Semana 2:
-          <textarea id="comentarioSemana2" placeholder="Observaciones..."></textarea>
-        </label>
+
+        <label for="fechaSemana2">Fecha de realización (Semana 2):</label>
+        <input type="date" id="fechaSemana2" />
+
+        <label for="comentarioSemana2">Comentarios Semana 2:</label>
+        <textarea id="comentarioSemana2" placeholder="Observaciones..."></textarea>
       </div>
-    </section>
-
-    <!-- Historial y Reporte -->
-    <section id="historial">
-      <h2>Historial Mensual</h2>
-      <select id="mesSelector"></select>
-
-      <!-- Contenedor de resumen -->
-      <div id="resumen" class="registro-mensual-container"></div>
-
-      <!-- Acciones -->
-      <div class="acciones">
-        <button id="generarReporteBtn"><i class="fas fa-file-alt"></i> Generar Reporte</button>
-        <button id="verPlantillaBtn"><i class="fas fa-file-alt"></i> Ver en plantilla</button>
-      </div>
-
-      <!-- Área donde se muestra el reporte generado -->
-      <div id="reporteArea" class="reporte-area"></div>
     </section>
   </div>
+<div id="notificacion" class="notificacion" aria-live="polite"></div>
 
   <!-- Scripts -->
-  <script type="module" src="app.js"></script>
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
-  
+  <script type="module" src="app.js"></script>
+
 </body>
 </html>

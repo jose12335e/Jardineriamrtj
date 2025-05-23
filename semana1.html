@@ -10,9 +10,6 @@
 </head>
 <body>
 
-  <!-- Notificación tipo Snackbar -->
-  <div id="notificacion" class="notificacion" aria-live="polite"></div>
-
   <div class="container">
     <header>
       <h1><i class="fas fa-seedling"></i> Plan de Jardinería – Cong. Miraflores</h1>
@@ -22,48 +19,34 @@
     <!-- Loader historial -->
     <div id="loader" class="loader">Cargando historial...</div>
 
-   <!-- Formulario -->
-<section id="formulario">
-  <label>Responsable:</label>
-  <select id="responsable" required>
-    <option value="">Selecciona tu nombre</option>
-    <option value="Misael Ramires">Misael Ramires</option>
-    <option value="Andy Guzman">Andy Guzman</option>
-    <option value="Jose M. Aracena">Jose M. Aracena</option>
-  </select>
+    <!-- Formulario Semana 1 -->
+    <section id="formulario">
+      <label for="responsable">Responsable:</label>
+      <select id="responsable" required>
+        <option value="">Selecciona tu nombre</option>
+        <option value="Misael Ramires">Misael Ramires</option>
+        <option value="Andy Guzman">Andy Guzman</option>
+        <option value="Jose M. Aracena">Jose M. Aracena</option>
+      </select>
 
-  <!-- Semana 1 -->
-  <div class="semana-box" id="semana1">
-    <h2><i class="fas fa-leaf"></i> Semana 1 – Revisión General y Poda Ligera</h2>
-    <ul>
-      <li><label><input type="checkbox" class="semana1"> Inspección visual del estado general</label></li>
-      <li><label><input type="checkbox" class="semana1"> Poda ligera de arbustos, setos y plantas ornamentales</label></li>
-      <li><label><input type="checkbox" class="semana1"> Retiro de hojas secas, flores marchitas y ramas caídas</label></li>
-      <li><label><input type="checkbox" class="semana1"> Limpieza de senderos y bordes</label></li>
-    </ul>
-    <label for="fechaSemana1">Fecha de realización (Semana 1):</label>
-    <input type="date" id="fechaSemana1" />
+      <div class="semana-box" id="semana1">
+        <h2><i class="fas fa-leaf"></i> Semana 1 – Revisión General y Poda Ligera</h2>
+        <ul>
+          <li><label><input type="checkbox" class="semana1"> Inspección visual del estado general</label></li>
+          <li><label><input type="checkbox" class="semana1"> Poda ligera de arbustos, setos y plantas ornamentales</label></li>
+          <li><label><input type="checkbox" class="semana1"> Retiro de hojas secas, flores marchitas y ramas caídas</label></li>
+          <li><label><input type="checkbox" class="semana1"> Limpieza de senderos y bordes</label></li>
+        </ul>
 
-    <label for="comentarioSemana1">Comentarios Semana 1:</label>
-    <textarea id="comentarioSemana1" placeholder="Observaciones..."></textarea>
-  </div>
-</section>
+        <label for="fechaSemana1">Fecha de realización (Semana 1):</label>
+        <input type="date" id="fechaSemana1" />
 
-    <!-- Historial y Reporte -->
-    <section id="historial">
-      <h2><i class="fas fa-history"></i> Historial Mensual</h2>
-      <select id="mesSelector" aria-label="Seleccionar mes"></select>
-
-      <div id="resumen" class="registro-mensual-container"></div>
-
-      <div class="acciones">
-        <button id="generarReporteBtn"><i class="fas fa-file-alt"></i> Generar Reporte</button>
-        <button id="verPlantillaBtn"><i class="fas fa-eye"></i> Ver en plantilla</button>
+        <label for="comentarioSemana1">Comentarios Semana 1:</label>
+        <textarea id="comentarioSemana1" placeholder="Observaciones..."></textarea>
       </div>
-
-      <div id="reporteArea" class="reporte-area"></div>
     </section>
   </div>
+<div id="notificacion" class="notificacion" aria-live="polite"></div>
 
   <!-- Scripts -->
   <script type="module" src="app.js"></script>
