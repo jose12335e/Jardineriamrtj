@@ -52,33 +52,79 @@ function generarContenidoReporte(datos) {
 
 // === Guardar solo la semana que se llenó ===
 async function guardarSemana(semanaNum) {
-  const responsable = document.getElementById('responsable').value.trim();
+  const responsableInput = document.getElementById('responsable');
+  const fechaInput = document.getElementById(`fechaSemana${semanaNum}`);
+  const comentarioInput = document.getElementById(`comentarioSemana${semanaNum}`);
+
+  if (!responsableInput) return console.error("Elemento #responsable no encontrado.");
+  if (!fechaInput) return console.error(`Elemento #fechaSemana${semanaNum} no encontrado.`);
+  if (!comentarioInput) return console.error(`Elemento #comentarioSemana${semanaNum} no encontrado.`);
+
+  const responsable = responsableInput.value.trim();
+  const fecha = fechaInput.value || '';
+  const comentario = comentarioInput.value || '';
+
   if (!responsable) {
     mostrarNotificacion("⚠️ El campo 'Responsable' es obligatorio.", "error");
     return;
   }
 
+  const tareas = Array.from(document.querySelectorAll(`input.semana${semanaNum}`)).map(cb => ({
+    tarea: cb.parentElement.textContent.trim(),
+    completada: cb.checked
+  }));
+
   const data = {
     responsable,
     mes: new Date().toISOString().slice(0, 7),
-    [`semana${semanaNum}`]: Array.from(document.querySelectorAll(`input.semana${semanaNum}`)).map(cb => ({
-      tarea: cb.parentElement.textContent.trim(),
-      completada: cb.checked
-    })),
-    [`fechaSemana${semanaNum}`]: document.getElementById(`fechaSemana${semanaNum}`)?.value || '',
-    [`comentarioSemana${semanaNum}`]: document.getElementById(`comentarioSemana${semanaNum}`)?.value || ''
+    [`semana${semanaNum}`]: tareas,
+    [`fechaSemana${semanaNum}`]: fecha,
+    [`comentarioSemana${semanaNum}`]: comentario
   };
 
   try {
     await addDoc(collection(db, "jardineria"), data);
     mostrarNotificacion(`✅ Semana ${semanaNum} guardada correctamente`, "exito");
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    cargarHistorial(data.mes);
+
+    const mesSelector = document.getElementById("mesSelector");
+    if (mesSelector) {
+      cargarHistorial(data.mes);
+    }
+
+    // === ENVÍO DE CORREO a varios destinatarios ===
+    const correos = [
+      "aracenajose58@gmail.com",
+      "angelceverino1@gmail.com",
+      "otrocorreo2@gmail.com"
+    ];
+
+    for (const correo of correos) {
+      emailjs.send("service_pntkso8", "template_oajkhry", {
+        semana: `Semana ${semanaNum}`,
+        responsable: responsable,
+        fecha: fecha,
+        comentario: comentario,
+        email: correo,
+        title: "Nueva Semana Guardada"
+      })
+      .then(() => {
+        console.log(`✅ Correo enviado a ${correo}`);
+      })
+      .catch(error => {
+        console.error(`❌ Error al enviar a ${correo}:`, error);
+      });
+    }
+
   } catch (error) {
-    console.error("❌ Error al guardar:", error.message);
+    console.error("❌ Error general en el envío:", error);
     mostrarNotificacion("Hubo un error al guardar la semana.", "error");
   }
 }
+
+
+  
+
 
 // === Manejador de eliminación ===
 function handleEliminar(e) {

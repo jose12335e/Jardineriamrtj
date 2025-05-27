@@ -336,3 +336,25 @@ input[type="checkbox"] {
   transform: translateY(-2px);
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
+#loginButton {
+  margin-bottom: 20px; /* espacio inferior */
+}
+
+.btn-tema {
+  margin-top: 10px; /* espacio superior */
+}
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .contenedor,
+body.dark .tarjeta,
+body.dark input,
+body.dark button,
+body.dark select,
+body.dark textarea {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #444;
+}
