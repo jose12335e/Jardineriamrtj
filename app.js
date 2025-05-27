@@ -96,7 +96,8 @@ async function guardarSemana(semanaNum) {
     const correos = [
       "aracenajose58@gmail.com",
       "angelceverino1@gmail.com",
-      "otrocorreo2@gmail.com"
+      "misaelramirez@gmail.com",
+      "andywilliam0007@gmail.com",
     ];
 
     for (const correo of correos) {
